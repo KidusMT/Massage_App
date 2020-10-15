@@ -1,0 +1,39 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:id="@+id/card_view"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:elevation="4dp"
+    android:innerRadius="0dp"
+    android:shape="ring"
+    app:cardCornerRadius="25dp"
+    app:cardUseCompatPadding="true"
+    tools:targetApi="lollipop">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/vertical_margin_12"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:baselineAligned="false">
+
+        <ImageView
+            android:id="@+id/pattern_pic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/ic_vibration" />
+
+        <TextView
+            android:id="@+id/pattern_name"
+            android:textAlignment="center"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Pattern A" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

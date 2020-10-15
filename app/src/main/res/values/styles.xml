@@ -1,0 +1,156 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/black_effective</item>
+        <item name="android:textColor">@color/black_effective</item>
+        <item name="android:windowBackground">@color/bg_color</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="drawerArrowStyle">@style/MaterialDrawer.DrawerArrowStyle</item>
+    </style>
+
+    <style name="GalaxyZooThemeToolbarDarkOverflow" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- android:textColorPrimary is the  color of the title text
+             in the Toolbar, in the Theme.AppCompat theme:  -->
+        <item name="android:textColorPrimary">@color/white</item>
+
+        <!-- android:textColorPrimaryInverse is the  color of the title
+             text in the Toolbar, in the Theme.AppCompat.Light theme:  -->
+        <!-- <item name="android:textColorPrimaryInverse">@color/abc_primary_text_material_light</item> -->
+
+        <!-- android:actionMenuTextColor is the color of the text of
+              action (menu) items in the Toolbar, at least in the
+              Theme.AppCompat theme.
+              For some reason, they already get the textColorPrimary
+              when running on API 21, but not on older versions of
+              Android, so this is only necessary to support older
+              Android versions.-->
+        <!--        <item name="actionMenuTextColor">@color/white</item>-->
+        <!-- android:textColorSecondary is the color of the menu
+             overflow icon (three vertical dots) -->
+        <!--        <item name="android:textColorSecondary">@color/white</item>-->
+
+        <!-- This would set the toolbar's background color,
+              but setting this also changes the popup menu's background,
+              even if we define popupTheme for our <Toolbar> -->
+        <!--<item name="android:background">@color/transparent</item>-->
+    </style>
+
+    <style name="AppThemeFullScreen" parent="AppTheme" tools:keep="@style/AppThemeFullScreen">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <!--no toolbar theme-->
+    <style name="AppTheme.no_toolbar" tools:keep="@style/AppTheme_no_toolbar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--full screen theme-->
+    <style name="AppTheme.no_toolbar.fullscreen" tools:keep="@style/AppTheme_no_toolbar_fullscreen">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="MaterialDrawer.DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:textColor">@color/black_effective</item>
+    </style>
+
+    <style name="TimePickerTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert" tools:keep="@style/TimePickerTheme">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Toolbar" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar" tools:keep="@style/Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="Button" parent="Widget.AppCompat.Button" tools:keep="@style/Button">
+        <item name="android:textColor">@color/black_effective</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
+    <style name="Button.ImageButton" parent="Widget.AppCompat.ImageButton" tools:keep="@style/Button_ImageButton">
+        <item name="android:padding">5dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="Button.Primary" parent="Button" tools:keep="@style/Button_Primary">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_primary_bg</item>
+    </style>
+
+    <style name="Button.Secondary" parent="Button" tools:keep="@style/Button_Secondary">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_secondary_bg</item>
+    </style>
+
+    <style name="TextAppearence.App.TextInputLayout" parent="@android:style/TextAppearance" tools:keep="@style/TextAppearence_App_TextInputLayout">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="Button.Action.Positive" parent="Button" tools:keep="@style/Button_Action_Positive">
+        <item name="android:textColor">@drawable/button_positive_text_drawable</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="Button.Action.Negative" parent="Button" tools:keep="@style/Button_Action_Negative">
+        <item name="android:textColor">@drawable/button_negative_text_drawable</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="AppTab" parent="Widget.Design.TabLayout" tools:keep="@style/AppTab">
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="tabTextAppearance">@style/AppTab.TextAppearance</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+        <item name="tabTextColor">@color/white</item>
+    </style>
+
+    <style name="AppTab.TextAppearance" parent="TextAppearance.Design.Tab" tools:keep="@style/AppTab_TextAppearance">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Button.Primary.Quiz.Empty" parent="Button.Primary" tools:keep="@style/Button_Primary_Quiz_Empty">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/button_primary_bg</item>
+    </style>
+</resources>

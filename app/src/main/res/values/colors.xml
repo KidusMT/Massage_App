@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#6A9D40</color>
+    <color name="colorAccent">#179CC7</color>
+    <color name="light_gray">#dbdbdb</color>
+    <color name="gray">#7e7e7e</color>
+    <color name="semi_gray" tools:keep="@color/semi_gray">#979797</color>
+    <color name="dark_gray">#696969</color>
+    <color name="bg_color">#f7f7f7</color>
+    <color name="black" tools:keep="@color/black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="white_transparent">#CCffffff</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="shadow" tools:keep="@color/shadow">#d0d8dc</color>
+    <color name="transparent" tools:keep="@color/transparent">#00000000</color>
+    <color name="translucent_white" tools:keep="@color/translucent_white">#88ffffff</color>
+    <color name="fb" tools:keep="@color/fb">#3b5998</color>
+    <color name="google" tools:keep="@color/google">#d34836</color>
+
+    <!--Design colors-->
+    <color name="red_dark" tools:keep="@color/red_dark">#F06423</color>
+    <color name="red_dark2" tools:keep="@color/red_dark2">#D85A1B</color>
+    <color name="cyan_light" tools:keep="@color/cyan_light">#c9ebee</color>
+    <color name="cyan" tools:keep="@color/cyan">#b5e3e7</color>
+    <color name="cyan_dark" tools:keep="@color/cyan_dark">#70BDC6</color>
+    <color name="navy_blue" tools:keep="@color/navy_blue">#214258</color>
+    <color name="navy_blue_dark" tools:keep="@color/navy_blue_dark">#1C3A4E</color>
+    <color name="light_green" tools:keep="@color/light_green">#78DC96</color>
+    <color name="light_blue" tools:keep="@color/light_blue">#55C8F0</color>
+    <color name="blue_black_dark" tools:keep="@color/blue_black_dark">#13171d</color>
+    <color name="blue_black_light" tools:keep="@color/blue_black_light">#516179</color>
+    <color name="blue_grey_light" tools:keep="@color/blue_grey_light">#A5B4C8</color>
+    <color name="orange" tools:keep="@color/orange">#FFA500</color>
+    <color name="yellow" tools:keep="@color/yellow">#fff44f</color>
+
+    <color name="selected_background_color" tools:keep="@color/selected_background_color">#66ffcc</color>
+    <color name="unselected_background_color" tools:keep="@color/unselected_background_color">#ffffff</color>
+    <color name="shadow_background_color" tools:keep="@color/shadow_background_color">#28415f</color>
+    <color name="unselected_header_background_color" tools:keep="@color/unselected_header_background_color">#ffffff</color>
+
+    <color name="unselected_text_color" tools:keep="@color/unselected_text_color">#537095</color>
+    <color name="selected_text_color" tools:keep="@color/selected_text_color">#ffffff</color>
+    <color name="separator_color" tools:keep="@color/separator_color">#ebebeb</color>
+
+    <color name="popup_menu_item_text_color" tools:keep="@color/popup_menu_item_text_color">#88a5c9</color>
+    <color name="email_password_field_background_color" tools:keep="@color/email_password_field_background_color">#f1f1f1</color>
+    <color name="separator">#ebebeb</color>
+</resources>
