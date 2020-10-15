@@ -28,7 +28,7 @@
         android:layout_marginBottom="@dimen/activity_horizontal_margin_32dp"
         android:maxLines="2"
         android:textAlignment="center"
-        android:textColor="@color/white" />
+        android:textColor="@color/primary_text_color" />
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
