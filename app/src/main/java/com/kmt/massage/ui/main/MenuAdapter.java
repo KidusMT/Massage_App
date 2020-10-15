@@ -103,7 +103,11 @@ public class MenuAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
                 patternName.setText(application.title);
                 ivPattern.setImageDrawable(itemView.getResources().getDrawable(application.pic));
-                itemView.setOnClickListener(v -> mCallback.onItemClicked(application));
+                itemView.setOnClickListener(v -> {
+                    selectedPosition=position;
+                    notifyDataSetChanged();
+                    mCallback.onItemClicked(application);
+                });
             }
         }
     }

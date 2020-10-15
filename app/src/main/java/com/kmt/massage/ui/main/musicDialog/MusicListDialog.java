@@ -47,7 +47,7 @@ public class MusicListDialog extends BaseDialog implements MusicListMvpView, Mus
     SwitchCompat playMusic;
 
     private DialogCommunicator communicator;
-    private boolean isPlaying;
+    private boolean isPlaying = true;
     public static MusicListDialog newInstance(List<MusicData> musicData) {
         musicDataList = musicData;
         MusicListDialog fragment = new MusicListDialog();

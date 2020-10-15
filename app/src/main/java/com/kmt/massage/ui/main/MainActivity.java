@@ -69,7 +69,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
     private boolean isVibrating = false;
     private String selectedMusic = "";
     private long[] selectPattern;
-    private boolean isMusicOn;
+    private boolean isMusicOn = true;
 
     public static Intent getStartIntent(Context context) {
         return new Intent(context, MainActivity.class);
@@ -303,7 +303,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
     @Override
     public void onItemClicked(VibPattern application) {
         selectPattern = application.pattern;
-        showMessage(application.title);
+//        showMessage(application.title);
     }
 
     @Override
