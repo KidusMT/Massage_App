@@ -25,7 +25,7 @@
             android:id="@+id/pattern_pic"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/ic_vibration" />
+            app:srcCompat="@drawable/blast" />
 
         <TextView
             android:id="@+id/pattern_name"

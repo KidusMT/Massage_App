@@ -3,7 +3,9 @@ package com.kmt.massage;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.preference.PreferenceManager;
 
 import androidx.multidex.MultiDex;
 
@@ -32,6 +34,20 @@ public class MvpApp extends Application {
         mContext = context;
     }
 
+    public static final String NIGHT_MODE = "NIGHT_MODE";
+    private boolean isNightModeEnabled = false;
+
+    private static MvpApp singleton = null;
+
+    public static MvpApp getInstance() {
+
+        if(singleton == null)
+        {
+            singleton = new MvpApp();
+        }
+        return singleton;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -44,7 +60,24 @@ public class MvpApp extends Application {
         AppLogger.init();
 
         MultiDex.install(mContext);
+        singleton = this;
 
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        this.isNightModeEnabled = mPrefs.getBoolean(NIGHT_MODE, false);
+    }
+
+    public boolean isNightModeEnabled() {
+        return isNightModeEnabled;
+    }
+
+    public void setIsNightModeEnabled(boolean isNightModeEnabled) {
+        this.isNightModeEnabled = isNightModeEnabled;
+
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = mPrefs.edit();
+        editor.putBoolean(NIGHT_MODE, isNightModeEnabled);
+        editor.apply();
     }
 
     @Override

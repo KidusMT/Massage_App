@@ -14,19 +14,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.AppBarLayout;
+import com.kmt.massage.MvpApp;
 import com.kmt.massage.R;
 import com.kmt.massage.data.model.MusicData;
 import com.kmt.massage.data.model.VibPattern;
 import com.kmt.massage.ui.base.BaseActivity;
 import com.kmt.massage.ui.main.musicDialog.MusicListDialog;
+import com.kmt.massage.utils.AppLogger;
 import com.kmt.massage.utils.GridSpacingItemDecoration;
 import com.kmt.massage.utils.MusicPlayerUtils;
 import com.skyfishjy.library.RippleBackground;
@@ -70,6 +71,8 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
     private String selectedMusic = "";
     private long[] selectPattern;
     private boolean isMusicOn = true;
+    private boolean isNightMode;
+    private MenuItem nightMode;
 
     public static Intent getStartIntent(Context context) {
         return new Intent(context, MainActivity.class);
@@ -78,6 +81,11 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (MvpApp.getInstance().isNightModeEnabled()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
         setContentView(R.layout.activity_main);
 
         getActivityComponent().inject(this);
@@ -87,6 +95,9 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
         mPresenter.onAttach(this);
 
         mAdapter.setCallback(this);
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+            isNightMode = true;
 
         setUp();
     }
@@ -199,7 +210,6 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
         pattern.pattern = new long[]{0, 30, 20, 30, 20, 30, 20, 30, 20, 30, 20};
         patterns.add(pattern);
 
-
         pattern = new VibPattern();
         pattern.title = "Fondle";
         pattern.pic = R.drawable.fondle;
@@ -245,12 +255,6 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
         pattern = new VibPattern();
         pattern.title = "Rainy";
         pattern.pic = R.drawable.rainy;
-        pattern.pattern = new long[]{0, 30, 100, 30, 100, 30, 100, 20, 200, 30, 200, 30, 200, 30, 400};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Rainy";
-        pattern.pic = R.drawable.sparkle;
         pattern.pattern = new long[]{0, 30, 100, 30, 100, 30, 100, 20, 200, 30, 200, 30, 200, 30, 400};
         patterns.add(pattern);
 
@@ -316,10 +320,35 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
     }
 
     @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        nightMode = menu.findItem(R.id.menu_mode);
+        if (isNightMode) nightMode.setIcon(R.drawable.ic_light_theme);
+        else nightMode.setIcon(R.drawable.ic_night_theme);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Drawable drawable = item.getIcon();
         if (drawable instanceof Animatable) {
             ((Animatable) drawable).start();
+        }
+
+        if (item.getItemId() == R.id.menu_mode) {
+            isNightMode = !isNightMode;
+            if (isNightMode) {
+                MvpApp.getInstance().setIsNightModeEnabled(true);
+                Intent intent = getIntent();
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                finish();
+                startActivity(intent);
+            } else {
+                MvpApp.getInstance().setIsNightModeEnabled(false);
+                Intent intent = getIntent();
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                finish();
+                startActivity(intent);
+            }
         }
 
         if (item.getItemId() == R.id.menu_music) {

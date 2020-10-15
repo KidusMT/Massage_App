@@ -1,6 +1,10 @@
 package com.kmt.massage.utils;
 
+import android.content.Context;
+
 import java.text.DecimalFormat;
+
+import kotlin.jvm.JvmStatic;
 
 @SuppressWarnings({"unused", "RedundantSuppression"})
 public final class AppUtils {
@@ -16,5 +20,13 @@ public final class AppUtils {
 
     private AppUtils() {
     }
+
+//    fun getCurrentTheme(context:Context?): Int {
+//        return getDefaultSharedPreferences(context).getInt(Constant.PREFERENCE_THEME, 0)
+//    }
+//
+//    fun setCurrentTheme(context: Context?, theme: Int) {
+//        getDefaultSharedPreferences(context).edit().putInt(Constant.PREFERENCE_THEME, theme).apply()
+//    }
 
 }
