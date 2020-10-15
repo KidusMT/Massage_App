@@ -92,7 +92,6 @@ public class MusicListDialog extends BaseDialog implements MusicListMvpView, Mus
     @Override
     protected void setUp(View view) {
         setupMenuRecyclerView();
-        communicator.setMusicOnOff(isPlaying);
         playMusic.setChecked(isPlaying);
         playMusic.setOnCheckedChangeListener((compoundButton, b) -> {
             isPlaying = b;
@@ -120,7 +119,8 @@ public class MusicListDialog extends BaseDialog implements MusicListMvpView, Mus
 
     @Override
     public void onItemClicked(MusicData application) {
-        communicator.setSelectedMusic(application.fileName);
+        if (isPlaying) communicator.setSelectedMusic(application.fileName);
+        else communicator.setSelectedMusic("");
         dismissDialog();
     }
 }
