@@ -47,9 +47,10 @@ public class MusicListDialog extends BaseDialog implements MusicListMvpView, Mus
     SwitchCompat playMusic;
 
     private DialogCommunicator communicator;
-    private boolean isPlaying = true;
-    public static MusicListDialog newInstance(List<MusicData> musicData) {
+    private static boolean isPlaying = true;
+    public static MusicListDialog newInstance(List<MusicData> musicData, boolean isMusicPlaying ) {
         musicDataList = musicData;
+        isPlaying = isMusicPlaying;
         MusicListDialog fragment = new MusicListDialog();
         Bundle bundle = new Bundle();
         fragment.setArguments(bundle);
@@ -92,6 +93,7 @@ public class MusicListDialog extends BaseDialog implements MusicListMvpView, Mus
     protected void setUp(View view) {
         setupMenuRecyclerView();
         communicator.setMusicOnOff(isPlaying);
+        playMusic.setChecked(isPlaying);
         playMusic.setOnCheckedChangeListener((compoundButton, b) -> {
             isPlaying = b;
             communicator.setMusicOnOff(isPlaying);

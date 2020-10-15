@@ -3,7 +3,6 @@ package com.kmt.massage.ui.main;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
-import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -57,13 +56,12 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
     @BindView(R.id.appbarLayout)
     AppBarLayout appBarLayout;
 
-    @BindView(R.id.fab)
+    @BindView(R.id.start)
     ImageView ivStart;
 
     @BindView(R.id.rv_application)
     RecyclerView mRecyclerView;
     Vibrator vibrator;
-    AnimationDrawable mAnimation;
     List<VibPattern> patterns = new ArrayList<>();
     List<MusicData> musicList = new ArrayList<>();
     private boolean isVibrating = false;
@@ -102,26 +100,6 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
         super.onDestroy();
     }
 
-    @SuppressWarnings({"unused", "RedundantSuppression", "EmptyMethod"})
-    @Override
-    public void onFragmentAttached() {
-    }
-
-    @SuppressWarnings({"unused", "RedundantSuppression"})
-    @Override
-    public void onFragmentDetached(String tag) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment fragment = fragmentManager.findFragmentByTag(tag);
-        if (fragment != null) {
-            fragmentManager
-                    .beginTransaction()
-                    .disallowAddToBackStack()
-                    .setCustomAnimations(R.anim.slide_left, R.anim.slide_right)
-                    .remove(fragment)
-                    .commitNow();
-        }
-    }
-
     @Override
     protected void setUp() {
         setSupportActionBar(mToolbar);
@@ -140,21 +118,39 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
             if (selectPattern != null) {
                 isVibrating = !isVibrating;
                 if (isVibrating) {
-                    if (!TextUtils.isEmpty(selectedMusic) && isMusicOn) {
-                        MusicPlayerUtils.playSound(MainActivity.this, selectedMusic);
-                    }
+                    startMusic(selectedMusic);
                     rippleBackground.startRippleAnimation();
                     ivStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_pause));
-                    vibrator.vibrate(selectPattern, 0); // repeats forever
+                    startVibration(selectPattern);
                 } else {
-                    if (isMusicOn)
-                        MusicPlayerUtils.stopSound();
+                    stopMusic();
                     rippleBackground.stopRippleAnimation();
                     ivStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_start));
-                    vibrator.cancel();
+                    stopVibration();
                 }
             }
         });
+    }
+
+    private void startMusic(String selectedMusic) {
+        if (!TextUtils.isEmpty(selectedMusic) && isMusicOn && isVibrating) {
+            stopMusic();
+            MusicPlayerUtils.playSound(MainActivity.this, selectedMusic);
+        }
+    }
+
+    private void stopMusic() {
+        if (isMusicOn)
+            MusicPlayerUtils.stopSound();
+    }
+
+    private void startVibration(long[] selectPattern) {
+        if (isVibrating)
+            vibrator.vibrate(selectPattern, 0); // repeats forever
+    }
+
+    private void stopVibration() {
+        vibrator.cancel();
     }
 
     private void setupMenuRecyclerView() {
@@ -303,7 +299,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
     @Override
     public void onItemClicked(VibPattern application) {
         selectPattern = application.pattern;
-//        showMessage(application.title);
+        startVibration(selectPattern);
     }
 
     @Override
@@ -320,7 +316,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
         }
 
         if (item.getItemId() == R.id.menu_music) {
-            MusicListDialog.newInstance(musicList).show(getSupportFragmentManager(), MusicListDialog.TAG);
+            MusicListDialog.newInstance(musicList, isMusicOn).show(getSupportFragmentManager(), MusicListDialog.TAG);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -330,10 +326,13 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
     @Override
     public void setSelectedMusic(String selectedMusic) {
         this.selectedMusic = selectedMusic;
+        startMusic(selectedMusic);
     }
 
     @Override
     public void setMusicOnOff(boolean isPlaying) {
         isMusicOn = isPlaying;
+        if (!isMusicOn) MusicPlayerUtils.stopSound();
+        else startMusic(selectedMusic);
     }
 }
