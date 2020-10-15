@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -146,7 +148,12 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
 
     private void startVibration(long[] selectPattern) {
         if (isVibrating)
-            vibrator.vibrate(selectPattern, 0); // repeats forever
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createWaveform(selectPattern, 0));
+            } else {
+                //deprecated in API 26
+                vibrator.vibrate(selectPattern, 0); // repeats forever
+            }
     }
 
     private void stopVibration() {
@@ -243,7 +250,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
 
         pattern = new VibPattern();
         pattern.title = "Rainy";
-        pattern.pic = R.drawable.rainy;
+        pattern.pic = R.drawable.sparkle;
         pattern.pattern = new long[]{0, 30, 100, 30, 100, 30, 100, 20, 200, 30, 200, 30, 200, 30, 400};
         patterns.add(pattern);
 
