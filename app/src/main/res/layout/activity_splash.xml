@@ -11,7 +11,7 @@
         android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:padding="@dimen/activity_horizontal_margin"
         android:scaleType="centerCrop"
-        android:src="@drawable/pulse" />
+        android:src="@drawable/splash" />
 
     <TextView
         android:id="@+id/textView41"

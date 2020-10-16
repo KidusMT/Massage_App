@@ -235,7 +235,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
         patterns.add(pattern);
 
         pattern = new VibPattern();
-        pattern.title = "Heavy Blast";
+        pattern.title = "Storm";
         pattern.pic = R.drawable.heavy_blast;
         pattern.pattern = new long[]{0, 30, 100, 30, 100, 30, 100, 30, 100, 30, 100};
         patterns.add(pattern);
