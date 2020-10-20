@@ -276,33 +276,28 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
 
     public void prepareMusicList() {
         MusicData musicData = new MusicData();
-        musicData.title = "Loon";
-        musicData.fileName = "loon.mp3";
+        musicData.title = "Bird";
+        musicData.fileName = "bird.mp3";
         musicList.add(musicData);
 
         musicData = new MusicData();
-        musicData.title = "Drone";
-        musicData.fileName = "drone.mp3";
+        musicData.title = "Night";
+        musicData.fileName = "night.mp3";
         musicList.add(musicData);
 
         musicData = new MusicData();
-        musicData.title = "Artefact";
-        musicData.fileName = "artefact.mp3";
+        musicData.title = "Rain";
+        musicData.fileName = "rain.mp3";
         musicList.add(musicData);
 
         musicData = new MusicData();
-        musicData.title = "Drum";
-        musicData.fileName = "drum.mp3";
+        musicData.title = "Sea";
+        musicData.fileName = "sea.mp3";
         musicList.add(musicData);
 
         musicData = new MusicData();
-        musicData.title = "Meditation";
-        musicData.fileName = "meditation.mp3";
-        musicList.add(musicData);
-
-        musicData = new MusicData();
-        musicData.title = "Ringing";
-        musicData.fileName = "ringing.mp3";
+        musicData.title = "Wind";
+        musicData.fileName = "wind.mp3";
         musicList.add(musicData);
     }
 
