@@ -1,9 +1,45 @@
 [![Build status](https://build.appcenter.ms/v0.1/apps/4de97e03-367e-48ad-af36-df6cc6254d44/branches/develop/badge)](https://appcenter.ms)
 
-![Home - Night Mode](https://github.com/KidusMT/Massage_App/blob/master/screenshots/home_night_mode.jpg)
+<p align="center">
+    <img src="screenshots/ic_launcher.png" width="150" />
+    <h2 align="center"> Cool Massage App </h2>
+    <p align="center"> <code> This unique vibrator app is a great and powerful relaxing and full body vibrator massager for your relaxation, pleasure and great satisfaction. </code> </p>
+</p>
 
-![Home - Light Mode](https://github.com/KidusMT/Massage_App/blob/master/screenshots/light_mode.jpg)
+# Screenshots
+<p align="center">
+<table border="0">
+    <tr>
+        <td><img src="screenshots/home_night_mode.jpg" width="150" /></td>
+        <td><img src="screenshots/light_mode.jpg" width="150" /></td>
+        <td><img src="screenshots/patterns.jpg" width="150" /></td>
+        <td><img src="screenshots/audio_musics.jpg" width="150" /></td>
+    </tr>
+</table>
+</p>
 
-![Vibration Patterns](https://github.com/KidusMT/Massage_App/blob/master/screenshots/patterns.jpg)
+## Audio Sounds
 
-![Audio Musics](https://github.com/KidusMT/Massage_App/blob/master/screenshots/audio_musics.jpg)
+* [X] Bird
+* [X] Night
+* [X] Rain
+* [X] See
+* [X] Wind
+
+## Vibration Patterns
+
+* [ ] Beat
+* [ ] Bliss
+* [ ] Blow
+* [ ] Cascade
+* [ ] Cuddle
+* [ ] Eruption
+* [ ] Homely
+* [ ] Hurricane
+* [ ] Moist
+* [ ] Motor
+* [ ] Pat
+* [ ] Rupture
+* [ ] Showery
+* [ ] Tempest
+* [ ] Quiver
