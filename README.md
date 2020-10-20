@@ -51,9 +51,9 @@ Audio sounds by <a href="https://freesound.org" title="Freesound">Freesound</a> 
 
 
 ## License
-
-MIT License
 ```
+MIT License
+
 Copyright (c) 2020 KidusMT
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
