@@ -28,20 +28,23 @@
 
 ## Vibration Patterns
 
-* [ ] Beat
-* [ ] Bliss
-* [ ] Blow
-* [ ] Cascade
-* [ ] Cuddle
-* [ ] Eruption
-* [ ] Homely
-* [ ] Hurricane
-* [ ] Moist
-* [ ] Motor
-* [ ] Pat
-* [ ] Rupture
-* [ ] Showery
-* [ ] Tempest
-* [ ] Quiver
+* [X] Beat
+* [X] Bliss
+* [X] Blow
+* [X] Cascade
+* [X] Cuddle
+* [X] Eruption
+* [X] Homely
+* [X] Hurricane
+* [X] Moist
+* [X] Motor
+* [X] Pat
+* [X] Rupture
+* [X] Showery
+* [X] Tempest
+* [X] Quiver
 
 Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+</br>
+Audio sounds by <a href="https://freesound.org" title="Freesound">Freesound</a> from <a href="https://freesound.org/" title="Freesound"> www.freesound.org</a> github <a href="https://github.com/MTG/freesound" title="github"> https://github.com/MTG/freesound</a>
+</br>
