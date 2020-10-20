@@ -181,93 +181,93 @@ public class MainActivity extends BaseActivity implements MainMvpView, MenuAdapt
 
     public void prepareList() {
         VibPattern pattern = new VibPattern();
-        pattern.title = "Blast";
-        pattern.pic = R.drawable.blast;
-        pattern.pattern = new long[]{0, 30, 50, 30, 50, 30, 50, 30, 50, 30, 50};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Burst";
-        pattern.pic = R.drawable.burst;
-        pattern.pattern = new long[]{0, 30, 30, 30, 30, 30, 30, 30, 20, 30, 20};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Plain";
-        pattern.pic = R.drawable.plain;
-        pattern.pattern = new long[]{0, 50, 300, 50, 300};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Throb";
-        pattern.pic = R.drawable.throb;
-        pattern.pattern = new long[]{0, 30, 200, 30, 150, 30, 100, 30, 150, 30, 200};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Caress";
-        pattern.pic = R.drawable.caress;
-        pattern.pattern = new long[]{0, 30, 20, 30, 20, 30, 20, 30, 20, 30, 20};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Fondle";
-        pattern.pic = R.drawable.fondle;
-        pattern.pattern = new long[]{0, 30, 30, 30, 30, 30, 30, 30, 30, 30, 200, 50, 200};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Ecstaz";
-        pattern.pic = R.drawable.ecstaz;
-        pattern.pattern = new long[]{0, 30, 20, 30, 20, 30, 20, 30, 20, 30, 20, 30, 300, 30, 30, 30, 30};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Pulse";
+        pattern.title = "Beat";
         pattern.pic = R.drawable.pulse;
         pattern.pattern = new long[]{0, 100, 25, 5, 100};
         patterns.add(pattern);
 
         pattern = new VibPattern();
-        pattern.title = "Engine";
-        pattern.pic = R.drawable.engine;
-        pattern.pattern = new long[]{0, 30, 30, 30, 50, 30, 50, 30, 60, 30, 100};
+        pattern.title = "Bliss";
+        pattern.pic = R.drawable.ecstaz;
+        pattern.pattern = new long[]{0, 30, 20, 30, 20, 30, 20, 30, 20, 30, 20, 30, 300, 30, 30, 30, 30};
         patterns.add(pattern);
 
         pattern = new VibPattern();
-        pattern.title = "Storm";
-        pattern.pic = R.drawable.heavy_blast;
-        pattern.pattern = new long[]{0, 30, 100, 30, 100, 30, 100, 30, 100, 30, 100};
+        pattern.title = "Blow";
+        pattern.pic = R.drawable.blast;
+        pattern.pattern = new long[]{0, 30, 50, 30, 50, 30, 50, 30, 50, 30, 50};
         patterns.add(pattern);
 
         pattern = new VibPattern();
-        pattern.title = "Volcano";
-        pattern.pic = R.drawable.volcano;
-        pattern.pattern = new long[]{0, 30, 200, 30, 200, 30, 75, 20, 75, 20, 75};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Tornado";
-        pattern.pic = R.drawable.tornado;
-        pattern.pattern = new long[]{0, 30, 400, 30, 400, 30, 100, 30, 100, 30, 100, 30, 100};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Rainy";
-        pattern.pic = R.drawable.rainy;
-        pattern.pattern = new long[]{0, 30, 100, 30, 100, 30, 100, 20, 200, 30, 200, 30, 200, 30, 400};
-        patterns.add(pattern);
-
-        pattern = new VibPattern();
-        pattern.title = "Waterfall";
+        pattern.title = "Cascade";
         pattern.pic = R.drawable.waterfall;
         pattern.pattern = new long[]{0, 30, 30, 30, 30, 30, 30, 30, 30, 30, 400};
         patterns.add(pattern);
 
         pattern = new VibPattern();
-        pattern.title = "Wet";
+        pattern.title = "Cuddle";
+        pattern.pic = R.drawable.caress;
+        pattern.pattern = new long[]{0, 30, 20, 30, 20, 30, 20, 30, 20, 30, 20};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Eruption";
+        pattern.pic = R.drawable.volcano;
+        pattern.pattern = new long[]{0, 30, 200, 30, 200, 30, 75, 20, 75, 20, 75};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Homely";
+        pattern.pic = R.drawable.plain;
+        pattern.pattern = new long[]{0, 50, 300, 50, 300};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Hurricane";
+        pattern.pic = R.drawable.tornado;
+        pattern.pattern = new long[]{0, 30, 400, 30, 400, 30, 100, 30, 100, 30, 100, 30, 100};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Moist";
         pattern.pic = R.drawable.wet;
         pattern.pattern = new long[]{0, 30, 30, 30, 30, 30, 50, 30, 200, 30, 30, 30, 30, 30, 400};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Motor";
+        pattern.pic = R.drawable.engine;
+        pattern.pattern = new long[]{0, 30, 30, 30, 50, 30, 50, 30, 60, 30, 100};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Pat";
+        pattern.pic = R.drawable.fondle;
+        pattern.pattern = new long[]{0, 30, 30, 30, 30, 30, 30, 30, 30, 30, 200, 50, 200};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Rupture";
+        pattern.pic = R.drawable.burst;
+        pattern.pattern = new long[]{0, 30, 30, 30, 30, 30, 30, 30, 20, 30, 20};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Showery";
+        pattern.pic = R.drawable.rainy;
+        pattern.pattern = new long[]{0, 30, 100, 30, 100, 30, 100, 20, 200, 30, 200, 30, 200, 30, 400};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Tempest";
+        pattern.pic = R.drawable.storm;
+        pattern.pattern = new long[]{0, 30, 100, 30, 100, 30, 100, 30, 100, 30, 100};
+        patterns.add(pattern);
+
+        pattern = new VibPattern();
+        pattern.title = "Quiver";
+        pattern.pic = R.drawable.throb;
+        pattern.pattern = new long[]{0, 30, 200, 30, 150, 30, 100, 30, 150, 30, 200};
         patterns.add(pattern);
 
         mAdapter.addItems(patterns);
