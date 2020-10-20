@@ -12,6 +12,7 @@ public class MusicPlayerUtils {
         try {
             AssetFileDescriptor afd = context.getAssets().openFd(fileName);
             mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+            mediaPlayer.setLooping(true);
             afd.close();
             mediaPlayer.prepare();
         } catch (final Exception e) {
